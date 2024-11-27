@@ -14,24 +14,24 @@ export const navigationLinks = [
 export const transactions = [
     {
         id: 11, 
-        name: "Sarah Parker",
+        name: "Sanya Gupta",
         image: personsImgs.person_four,
         date: "23/12/04",
-        amount: 22000
+        amount: 2200000 // Amount in INR
     },
     {
         id: 12, 
-        name: "Krisitine Carter",
+        name: "Krishna Kumari",
         image: personsImgs.person_three,
         date: "23/07/21",
-        amount: 20000
+        amount: 2000000 // Amount in INR
     },
     {
         id: 13, 
-        name: "Irene Doe",
+        name: "Indira Reddy",
         image: personsImgs.person_two,
         date: "23/08/25",
-        amount: 30000
+        amount: 3000000 // Amount in INR
     }
 ];
 
@@ -73,31 +73,31 @@ export const budget = [
         id: 19, 
         title: "Subscriptions",
         type: "Automated",
-        amount: 22000
+        amount: 2200000 // Amount in INR
     },
     {
         id: 20, 
         title: "Loan Payment",
         type: "Automated",
-        amount: 16000
+        amount: 1600000 // Amount in INR
     },
     {
         id: 21, 
         title: "Foodstuff",
         type: "Automated",
-        amount: 20000
+        amount: 2000000 // Amount in INR
     },
     {
         id: 22, 
         title: "Subscriptions",
         type: null,
-        amount: 10000
+        amount: 1000000 // Amount in INR
     },
     {
         id: 23, 
         title: "Subscriptions",
         type: null,
-        amount: 40000
+        amount: 4000000 // Amount in INR
     }
 ];
 
@@ -106,19 +106,19 @@ export const subscriptions = [
         id: 24,
         title: "LinkedIn",
         due_date: "23/12/04",
-        amount: 20000
+        amount: 200000 // Amount in INR
     },
     {
         id: 25,
         title: "Netflix",
         due_date: "23/12/10",
-        amount: 5000
+        amount: 50000 // Amount in INR
     },
     {
         id: 26,
-        title: "DSTV",
+        title: "Airtel DTH",
         due_date: "23/12/22",
-        amount: 2000
+        amount: 2000 // Amount in INR
     }
 ];
 
@@ -126,37 +126,38 @@ export const savings = [
     {
         id: 27,
         image: personsImgs.person_one,
-        saving_amount: 250000,
-        title: "Pay kid bro’s fees",
+        saving_amount: 25000000, // Amount in INR
+        title: "Pay Younger Brother’s College Fees",
         date_taken: "23/12/22",
-        amount_left: 40000
+        amount_left: 4000000 // Amount in INR
     }
 ]
 
 export const usersData = [
     {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
+      name: 'Arjun Yadav',
+      email: 'arjun.yadav@example.com',
       dob: '1990-01-15',
-      phone: '123-456-7890',
+      phone: '9876543210',
       role: 'Admin',
       permissions: 'Full Access',
     },
     {
-      name: 'Jane Smith',
-      email: 'jane.smith@example.com',
+      name: 'Priya Desai',
+      email: 'priya.desai@example.com',
       dob: '1992-07-24',
-      phone: '987-654-3210',
+      phone: '8765432109',
       role: 'Editor',
       permissions: 'Edit, View',
     },
     {
-      name: 'Alice Johnson',
-      email: 'alice.johnson@example.com',
+      name: 'Rajesh Kumar',
+      email: 'rajesh.kumar@example.com',
       dob: '1995-03-10',
-      phone: '555-666-7777',
+      phone: '9911223344',
       role: 'Viewer',
       permissions: 'View Only',
     },
-  ];
+];
+
   
