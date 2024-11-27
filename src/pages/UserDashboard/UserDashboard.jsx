@@ -1,7 +1,19 @@
 import React from 'react';
 import './UserDashboard.css'; // Importing CSS for styling
+import { useNavigate } from 'react-router-dom';
 
 const UserDashboard = () => {
+    const navigate = useNavigate();
+
+  // Logout function
+  const handleLogout = () => {
+    // Clear token from localStorage
+    localStorage.removeItem('token');
+
+    // Redirect to the login page
+    navigate('/login');
+  };
+
     return (
         <div className="dashboard-container">
             <div className="dashboard-header">
@@ -34,6 +46,12 @@ const UserDashboard = () => {
                         <li>Finalize the guest list for the event</li>
                     </ul>
                 </div>
+            </div>
+            {/* Logout Button */}
+            <div className="logout-btn-container">
+                <button className="logout-btn" onClick={handleLogout}>
+                    Logout
+                </button>
             </div>
         </div>
     );

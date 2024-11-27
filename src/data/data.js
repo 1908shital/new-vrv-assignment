@@ -8,6 +8,7 @@ export const navigationLinks = [
   { id: 3, title: 'All Roles', image: iconsImgs.plane, path: '/roles' },
   { id: 4, title: 'User Management', image: iconsImgs.wallet, path: '/user-management' },
   { id: 5, title: 'Permissions', image: iconsImgs.wealth, path: '/permissions' },
+  { id: 5, title: 'Logout', image: iconsImgs.wealth, path: '/logout' },
 ];
 
 

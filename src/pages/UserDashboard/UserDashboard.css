@@ -102,3 +102,44 @@ body {
   margin-right: 8px;
   color: var(--clr-pumpkin);
 }
+
+
+/* Logout Button Container */
+.logout-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Beautified Logout Button */
+.logout-btn {
+  background: linear-gradient(45deg, var(--clr-scarlet), var(--clr-pumpkin)); /* Gradient background */
+  color: var(--clr-white);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for background and scaling */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(45deg, var(--clr-scarlet-v1), var(--clr-pumpkin)); /* Hover effect with a different gradient */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.logout-btn:focus {
+  outline: none;
+}
+
+/* Active button state */
+.logout-btn:active {
+  transform: scale(0.98); /* Button slightly shrinks when clicked */
+}
+
+/* Add a subtle glow on hover */
+.logout-btn:hover {
+  box-shadow: 0 4px 10px rgba(255, 94, 77, 0.6); /* Soft glow effect */
+}
