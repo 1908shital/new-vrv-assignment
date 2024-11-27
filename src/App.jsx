@@ -29,9 +29,9 @@ const App = () => {
         <div className="content">
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            
 
             {/* Role-Based Routes */}
             {role === "Admin" && (
