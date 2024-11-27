@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Signup.css'; // Import the CSS file
 
 const Signup = () => {
@@ -8,14 +9,26 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('User');
     const [message, setMessage] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate(); // Initialize the navigate function
 
     const handleSignup = async (e) => {
         e.preventDefault();
+        setMessage(''); // Clear previous success messages
+        setError(''); // Clear previous error messages
+
         try {
-            await axios.post('/api/auth/signup', { name, email, password, role });
-            setMessage('Signup successful! You can login now.');
+            const response = await axios.post('http://localhost:5000/api/auth/signup', {
+                name,
+                email,
+                password,
+                role,
+            });
+            setMessage(response.data.message); // Display the success message from the API
+            setTimeout(() => navigate('/login'), 500); // Redirect to /login after 2 seconds
         } catch (err) {
-            setMessage('Error during signup');
+            // Check for server response error or set a generic error message
+            setError(err.response?.data?.message || 'Error during signup');
         }
     };
 
@@ -24,39 +37,46 @@ const Signup = () => {
             <div className="signup-form">
                 <h2 className="signup-title">Signup</h2>
                 <form onSubmit={handleSignup}>
-                    <input 
-                        type="text" 
-                        value={name} 
-                        onChange={(e) => setName(e.target.value)} 
-                        placeholder="Name" 
-                        className="input-field" 
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Name"
+                        className="input-field"
+                        required
                     />
-                    <input 
-                        type="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        placeholder="Email" 
-                        className="input-field" 
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        className="input-field"
+                        required
                     />
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        placeholder="Password" 
-                        className="input-field" 
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        className="input-field"
+                        required
+                        minLength="6" // Optional: Set a minimum password length
                     />
-                    <select 
-                        value={role} 
-                        onChange={(e) => setRole(e.target.value)} 
+                    <select
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
                         className="select-field"
                     >
                         <option value="User">User</option>
                         <option value="Admin">Admin</option>
                         <option value="Guest">Guest</option>
                     </select>
-                    <button type="submit" className="signup-button">Signup</button>
+                    <button type="submit" className="signup-button">
+                        Signup
+                    </button>
                 </form>
-                {message && <p className="message">{message}</p>}
+                {message && <p className="success-message">{message}</p>}
+                {error && <p className="error-message">{error}</p>}
             </div>
         </div>
     );

@@ -2,6 +2,8 @@
     background-color: var(--clr-secondary);
     flex: 1;
     padding: 32px;
+    position: absolute;
+    left: 270px;
   }
 
   @media screen and (max-width: 1400px) {

@@ -1,6 +1,7 @@
-import "./App.css"; // Importing your styles
-import Sidebar from "./layout/Sidebar/Sidebar"; // Sidebar component
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import "./App.css";
+import Sidebar from "./layout/Sidebar/Sidebar";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Users from "./pages/Users/User";
 import Roles from "./pages/Roles/Roles";
@@ -10,27 +11,43 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import GuestDashboard from "./pages/GuestDashboard/GuestDashboard";
+import {jwtDecode} from "jwt-decode"; // Remove destructuring
 
 const App = () => {
+  const token = localStorage.getItem("token");
+  let role = null;
+
+  if (token) {
+    const decodedToken = jwtDecode(token);
+    role = decodedToken.role;
+  }
+
   return (
     <div className="app">
-      {" "}
-      {/* Wrapper with your 'app' CSS class */}
       <Router>
-        <Sidebar /> {/* Sidebar always visible */}
+        {role === "Admin" && <Sidebar />} {/* Sidebar only visible for Admin */}
         <div className="content">
-          {" "}
-          {/* Add a wrapper for main content */}
           <Routes>
-            <Route path="/" element={<Login />} />
+            {/* Public Routes */}
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/roles" element={<Roles />} />
-            <Route path="/user-management" element={<UserManagement />} />
-            <Route path="/permissions" element={<Permissions />} />
-            <Route path="/user" element={<UserDashboard />} />
-            <Route path="/guest" element={<GuestDashboard />} />
+
+            {/* Role-Based Routes */}
+            {role === "Admin" && (
+              <>
+                <Route path="/home" element={<Home />} />
+                <Route path="/users" element={<Users />} />
+                <Route path="/roles" element={<Roles />} />
+                <Route path="/user-management" element={<UserManagement />} />
+                <Route path="/permissions" element={<Permissions />} />
+              </>
+            )}
+            {role === "User" && <Route path="/user" element={<UserDashboard />} />}
+            {role === "Guest" && <Route path="/guest" element={<GuestDashboard />} />}
+
+            {/* Fallback for Undefined Routes */}
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
       </Router>
