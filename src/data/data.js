@@ -1,18 +1,15 @@
 import { iconsImgs } from "../utils/images";
 import { personsImgs } from "../utils/images";
 
+
 export const navigationLinks = [
-    { id: 1, title: 'Home', image: iconsImgs.home },
-    { id: 2, title: 'Budget', image: iconsImgs.budget },
-    { id: 3, title: 'Transactions', image: iconsImgs.plane },
-    { id: 4, title: 'Subscriptions', image: iconsImgs.wallet },
-    { id: 5, title: 'Loans', image: iconsImgs.bills },
-    { id: 6, title: 'Reports', image: iconsImgs.report },
-    { id: 7, title: 'Savings', image: iconsImgs.wallet },
-    { id: 8, title: 'Financial Advice', image: iconsImgs.wealth },
-    { id: 9, title: 'Account', image: iconsImgs.user },
-    { id: 10, title: 'Settings', image: iconsImgs.gears }
+  { id: 1, title: 'Home', image: iconsImgs.home, path: '/' },
+  { id: 2, title: 'Users', image: iconsImgs.budget, path: '/users' },
+  { id: 3, title: 'All Roles', image: iconsImgs.plane, path: '/roles' },
+  { id: 4, title: 'User Management', image: iconsImgs.wallet, path: '/user-management' },
+  { id: 5, title: 'Permissions', image: iconsImgs.wealth, path: '/permissions' },
 ];
+
 
 export const transactions = [
     {
@@ -135,3 +132,31 @@ export const savings = [
         amount_left: 40000
     }
 ]
+
+export const usersData = [
+    {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      dob: '1990-01-15',
+      phone: '123-456-7890',
+      role: 'Admin',
+      permissions: 'Full Access',
+    },
+    {
+      name: 'Jane Smith',
+      email: 'jane.smith@example.com',
+      dob: '1992-07-24',
+      phone: '987-654-3210',
+      role: 'Editor',
+      permissions: 'Edit, View',
+    },
+    {
+      name: 'Alice Johnson',
+      email: 'alice.johnson@example.com',
+      dob: '1995-03-10',
+      phone: '555-666-7777',
+      role: 'Viewer',
+      permissions: 'View Only',
+    },
+  ];
+  
