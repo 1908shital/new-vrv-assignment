@@ -15,7 +15,7 @@ const Login = () => {
         setError(''); // Reset error on every attempt
 
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', {
+            const response = await axios.post('https://vrv-backend.vercel.app/api/auth/login', {
                 email,
                 password,
             });

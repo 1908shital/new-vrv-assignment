@@ -18,7 +18,7 @@ const Signup = () => {
         setError(''); // Clear previous error messages
 
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/signup', {
+            const response = await axios.post('https://vrv-backend.vercel.app/api/auth/signup', {
                 name,
                 email,
                 password,
