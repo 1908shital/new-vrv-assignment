@@ -54,7 +54,7 @@
 
 /* Hover effect for rows */
 .user-table tr:hover {
-    background-color: var(--clr-silver-v1); /* Light gray hover effect */
+    background-color: var(--clr-primar-light); /* Light gray hover effect */
 }
 
 /* Table data styling */
