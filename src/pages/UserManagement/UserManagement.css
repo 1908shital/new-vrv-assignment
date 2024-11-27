@@ -1,46 +1,53 @@
 /* Container styling */
 .user-management-container {
-    width: 100%; /* Make the container take full width */
-    max-width: 100%; /* Remove max-width limit */
+    width: 100%;
+    min-height: 100%;
+    max-width: 100%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--clr-primary);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
+  /* Title styling */
   .page-title {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: var(--clr-white);
   }
   
   /* Cards container with Flexbox */
   .cards-container {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping of cards when the width is filled */
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start; /* Align cards to the left */
+    justify-content: flex-start;
     padding: 10px;
   }
   
   /* Individual card styling */
   .user-card {
-    background-color: #fff;
+    background-color: var(--clr-secondary);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 24px;
     padding: 20px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    width: 300px; /* Fixed width for each card */
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    width: 300px;
+    box-sizing: border-box;
   }
   
+  /* Hover effect for the cards */
   .user-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 10px;
   }
   
+  /* Card header styling */
   .user-card-header {
     display: flex;
     justify-content: space-between;
@@ -48,27 +55,28 @@
     margin-bottom: 15px;
   }
   
-  .user-card-header h3 {
+  .user-name {
     font-size: 20px;
-    color: #007BFF;
+    color: var(--clr-white);
   }
   
   .user-role {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: var(--clr-scarlet);
+    color: var(--clr-white);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
     text-transform: uppercase;
   }
   
+  /* Card body text */
   .user-card-body p {
     font-size: 14px;
-    color: #555;
+    color: var(--clr-silver);
     margin: 8px 0;
   }
   
   .user-card-body strong {
-    color: #333;
+    color: var(--clr-white);
   }
   
