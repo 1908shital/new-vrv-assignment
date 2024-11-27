@@ -46,8 +46,7 @@ const App = () => {
             {role === "User" && <Route path="/user" element={<UserDashboard />} />}
             {role === "Guest" && <Route path="/guest" element={<GuestDashboard />} />}
 
-            {/* Fallback for Undefined Routes */}
-            <Route path="*" element={<Navigate to="/" />} />
+            
           </Routes>
         </div>
       </Router>
