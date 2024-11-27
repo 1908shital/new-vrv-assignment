@@ -22,11 +22,15 @@ const Login = () => {
 
             const token = response.data.token;
 
+            console.log('Token:', token);
+
             // Store the token in localStorage
             localStorage.setItem('token', token);
 
             // Decode token to retrieve role and other user information
             const decoded = jwtDecode(token);
+
+            console.log('Decoded Token Role:', decoded.role);
 
             // Redirect based on the role
             switch (decoded.role) {
