@@ -42,6 +42,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px;
   padding: 24px;
   color: var(--clr-white);
+  margin-top: 150px;
 }
 
 .login-title {
@@ -89,4 +90,18 @@ body {
   color: var(--clr-scarlet);
   text-align: center;
   margin-top: 12px;
+}
+
+.signup-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
 }

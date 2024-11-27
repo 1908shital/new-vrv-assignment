@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom'; // Import Link
 import './Signup.css'; // Import the CSS file
 
 const Signup = () => {
@@ -25,7 +25,7 @@ const Signup = () => {
                 role,
             });
             setMessage(response.data.message); // Display the success message from the API
-            setTimeout(() => navigate('/login'), 500); // Redirect to /login after 2 seconds
+            navigate('/login'); // Navigate immediately to /login after successful signup
         } catch (err) {
             // Check for server response error or set a generic error message
             setError(err.response?.data?.message || 'Error during signup');
@@ -77,6 +77,11 @@ const Signup = () => {
                 </form>
                 {message && <p className="success-message">{message}</p>}
                 {error && <p className="error-message">{error}</p>}
+
+                {/* Link to Login page */}
+                <div className="login-link">
+                    <p>Already have an account? <Link to="/login">Login here</Link></p>
+                </div>
             </div>
         </div>
     );

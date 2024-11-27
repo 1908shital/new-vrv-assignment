@@ -31,7 +31,7 @@ const App = () => {
             {/* Public Routes */}
             <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            
+            <Route path="/signup" element={<Signup />} />
 
             {/* Role-Based Routes */}
             {role === "Admin" && (

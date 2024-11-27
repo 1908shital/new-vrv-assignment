@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode'; // Correct import for jwt-decode
+import { useNavigate, Link } from 'react-router-dom'; // Import Link
+import { jwtDecode } from 'jwt-decode'; // Correct import for jwt-decode
 import './Login.css'; // Import the CSS file
 
 const Login = () => {
@@ -72,6 +72,11 @@ const Login = () => {
                     </button>
                 </form>
                 {error && <p className="error-message">{error}</p>}
+
+                {/* Link to Signup page */}
+                <div className="signup-link">
+                    <p>Don't have an account? <Link to="/signup">Signup here</Link></p>
+                </div>
             </div>
         </div>
     );
